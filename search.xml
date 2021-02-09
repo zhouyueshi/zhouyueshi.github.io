@@ -1,17 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>spring 程序入口和xml解析</title>
+    <url>/2021/02/09/spring-%E7%A8%8B%E5%BA%8F%E5%85%A5%E5%8F%A3%E5%92%8Cxml%E8%A7%A3%E6%9E%90/</url>
+    <content><![CDATA[<p>准备一个<code>spring-demo</code>，引入自己编译的jar，开始spring的源码探索吧！！！</p>
+<a id="more"></a>
+
+<h2 id="1-源码jar导入"><a href="#1-源码jar导入" class="headerlink" title="[1] 源码jar导入"></a>[1] 源码jar导入</h2><!-- more -->
+
+<ul>
+<li><p>idea新建maven项目<code>spring-demo</code></p>
+</li>
+<li><p>导入jar依赖</p>
+<p>spring最核心的jar: spring-bean、spring-core、spring-context、spring-expression</p>
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>上述<code>$&#123;spring.version&#125;</code>为<code>5.2.8.RELEASE</code>，理论上讲一个最基本的spring项目，只需要依赖context，context本身依赖了spring-aop、Sspring-beans、spring-core、spring-expression</p>
+<p><img src="https://tvax4.sinaimg.cn/large/e773048fly1gnhk03a0uoj20jh040dfv.jpg" alt="image"></p>
+]]></content>
+      <categories>
+        <category>spring源码系列</category>
+      </categories>
+      <tags>
+        <tag>xml解析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>spring源码编译</title>
     <url>/2021/02/09/spring%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/</url>
-    <content><![CDATA[<h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="[1] 准备工作"></a>[1] 准备工作</h2><ul>
-<li><p><strong>JDK1.8版本</strong></p>
-</li>
-<li><p><strong>Spring源码下载 版本：5.2.8.RELEASE</strong></p>
+    <content><![CDATA[<p>为了有助于spring源码的学习，方便在源码中断点、写注释、我们需要自己将源码编译好。</p>
 <a id="more"></a>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --branch v5.2.8.RELEASE https://gitee.com/Z201/spring-framework.git</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>gradle安装</strong></p>
-</li>
+
+<h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="[1] 准备工作"></a>[1] 准备工作</h2><ul>
+<li><strong>JDK1.8版本</strong></li>
+<li><strong>Spring源码下载 版本：5.2.8.RELEASE</strong><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --branch v5.2.8.RELEASE https://gitee.com/Z201/spring-framework.git</span><br></pre></td></tr></table></figure></li>
+<li><strong>gradle安装</strong></li>
 </ul>
 <p>1.下载地址 <code>https://gradle.org/releases/</code></p>
 <p>  <img src="https://tva3.sinaimg.cn/large/e773048fly1gnh4ve2ev4j20iq078aad.jpg" alt="1"></p>
@@ -19,25 +43,25 @@
 <p><strong>说明：</strong></p>
 <p>将下载好的grandle解压到某个目录,如：D:\work\gradle下。</p>
 <p>建立gradle的user_home文件夹，如：D:\work\gradle\gradle_repos用来存放一些下载包，不然默认是在c盘下。</p>
-<p>2.1 配置GRADLE_HOME</p>
+<p>2.1 配置<code>GRADLE_HOME</code></p>
 <p><img src="https://tva3.sinaimg.cn/mw690/e773048fly1gnh78yw2f1j20i004s0sp.jpg" alt="image"></p>
 <p><img src="https://tva3.sinaimg.cn/mw690/e773048fly1gnh79rq87dj20e705caa1.jpg" alt="image"></p>
-<p>2.2 配置GRADLE_USER_HOME</p>
+<p>2.2 配置<code>GRADLE_USER_HOME</code></p>
 <p><img src="https://tvax3.sinaimg.cn/large/e773048fly1gnh5mia14wj20hy04it8o.jpg" alt="image"></p>
 <h2 id="2-源码配置以及编译"><a href="#2-源码配置以及编译" class="headerlink" title="[2]源码配置以及编译"></a>[2]源码配置以及编译</h2><ul>
-<li><strong>修改settings.gradle文件</strong></li>
+<li><strong>修改<code>settings.gradle</code>文件</strong></li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">maven &#123; url <span class="string">&#x27;https://maven.aliyun.com/repository/public&#x27;</span> &#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><strong>修改gradle.properties文件</strong></li>
+<li><strong>修改<code>gradle.properties</code>文件</strong></li>
 </ul>
 <figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">version</span>=<span class="string">5.2.8.RELEASE</span></span><br><span class="line"><span class="meta">org.gradle.jvmargs</span>=<span class="string">-Xmx2048M</span></span><br><span class="line"><span class="meta">org.gradle.caching</span>=<span class="string">true</span></span><br><span class="line"><span class="meta">org.gradle.parallel</span>=<span class="string">true</span></span><br><span class="line"><span class="meta">org.gradle.configureondemand</span>=<span class="string">true</span></span><br><span class="line"><span class="meta">org.gradle.daemon</span>=<span class="string">true</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li><strong>修改build.gradle文件</strong></li>
+<li><strong>修改<code>build.gradle</code>文件</strong></li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 注意：一定要加到mavenCentral()前面</span></span><br><span class="line">maven &#123; url <span class="string">&#x27;https://maven.aliyun.com/nexus/content/groups/public/&#x27;</span> &#125;</span><br><span class="line">maven &#123; url <span class="string">&#x27;https://maven.aliyun.com/nexus/content/repositories/jcenter&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><strong>编译spring-oxm模块</strong></li>
+<li><strong>编译<code>spring-oxm</code>模块</strong></li>
 </ul>
 <p>到源码的根目录，打开cmd，执行:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">gradlew :spring-oxm:compileTestJava</span><br></pre></td></tr></table></figure>
