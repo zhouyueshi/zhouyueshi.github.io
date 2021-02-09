@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>spring源码编译</title>
+    <url>/2021/02/09/spring%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/</url>
+    <content><![CDATA[<h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="[1] 准备工作"></a>[1] 准备工作</h2><ul>
+<li><p><strong>JDK1.8版本</strong></p>
+</li>
+<li><p><strong>Spring源码下载 版本：5.2.8.RELEASE</strong></p>
+<a id="more"></a>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --branch v5.2.8.RELEASE https://gitee.com/Z201/spring-framework.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>gradle安装</strong></p>
+</li>
+</ul>
+<p>1.下载地址 <code>https://gradle.org/releases/</code></p>
+<p>  <img src="https://tva3.sinaimg.cn/large/e773048fly1gnh4ve2ev4j20iq078aad.jpg" alt="1"></p>
+<p>2.环境变量配置</p>
+<p><strong>说明：</strong></p>
+<p>将下载好的grandle解压到某个目录,如：D:\work\gradle下。</p>
+<p>建立gradle的user_home文件夹，如：D:\work\gradle\gradle_repos用来存放一些下载包，不然默认是在c盘下。</p>
+<p>2.1 配置GRADLE_HOME</p>
+<p><img src="https://tva3.sinaimg.cn/mw690/e773048fly1gnh78yw2f1j20i004s0sp.jpg" alt="image"></p>
+<p><img src="https://tva3.sinaimg.cn/mw690/e773048fly1gnh79rq87dj20e705caa1.jpg" alt="image"></p>
+<p>2.2 配置GRADLE_USER_HOME</p>
+<p><img src="https://tvax3.sinaimg.cn/large/e773048fly1gnh5mia14wj20hy04it8o.jpg" alt="image"></p>
+<h2 id="2-源码配置以及编译"><a href="#2-源码配置以及编译" class="headerlink" title="[2]源码配置以及编译"></a>[2]源码配置以及编译</h2><ul>
+<li><strong>修改settings.gradle文件</strong></li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">maven &#123; url <span class="string">&#x27;https://maven.aliyun.com/repository/public&#x27;</span> &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>修改gradle.properties文件</strong></li>
+</ul>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">version</span>=<span class="string">5.2.8.RELEASE</span></span><br><span class="line"><span class="meta">org.gradle.jvmargs</span>=<span class="string">-Xmx2048M</span></span><br><span class="line"><span class="meta">org.gradle.caching</span>=<span class="string">true</span></span><br><span class="line"><span class="meta">org.gradle.parallel</span>=<span class="string">true</span></span><br><span class="line"><span class="meta">org.gradle.configureondemand</span>=<span class="string">true</span></span><br><span class="line"><span class="meta">org.gradle.daemon</span>=<span class="string">true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>修改build.gradle文件</strong></li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 注意：一定要加到mavenCentral()前面</span></span><br><span class="line">maven &#123; url <span class="string">&#x27;https://maven.aliyun.com/nexus/content/groups/public/&#x27;</span> &#125;</span><br><span class="line">maven &#123; url <span class="string">&#x27;https://maven.aliyun.com/nexus/content/repositories/jcenter&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>编译spring-oxm模块</strong></li>
+</ul>
+<p>到源码的根目录，打开cmd，执行:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">gradlew :spring-oxm:compileTestJava</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="3-导入idea"><a href="#3-导入idea" class="headerlink" title="[3]导入idea"></a>[3]导入idea</h2><ul>
+<li><p><strong>安装kotlin（一般都已经安装了）</strong></p>
+</li>
+<li><p><strong>修改idea setting</strong></p>
+</li>
+</ul>
+<p><img src="https://tvax3.sinaimg.cn/mw690/e773048fly1gnh74ixrnfj20m60b5tan.jpg" alt="image"></p>
+<ul>
+<li><strong>spring源码导入</strong></li>
+</ul>
+<p><img src="https://tvax1.sinaimg.cn/mw690/e773048fly1gnh726kuzvj20in09c74p.jpg" alt="image"></p>
+<p><img src="https://tvax1.sinaimg.cn/mw690/e773048fly1gnh73dbsroj20kf09kaab.jpg" alt="image"></p>
+<p><img src="https://tvax2.sinaimg.cn/mw690/e773048fly1gnh70wy0j5j20ne09pt8y.jpg" alt="image"></p>
+]]></content>
+      <categories>
+        <category>spring源码系列</category>
+      </categories>
+      <tags>
+        <tag>源码编译</tag>
+      </tags>
+  </entry>
+</search>
