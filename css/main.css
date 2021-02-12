@@ -1193,7 +1193,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #e4a3c8;
+  background: #c712ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2562,4 +2562,20 @@ hr {
 }
 .customNote p {
   margin: 0 0 1px 0;
+}
+.custom-block .custom-block-title {
+  font-weight: 600;
+  margin-bottom: -0.4rem;
+}
+.custom-block.tip {
+  background-color: #f3f5f7;
+  border-color: #42b983;
+}
+.custom-block.danger,
+.custom-block.tip,
+.custom-block.warning {
+  border-left-width: 0.5rem;
+  border-left-style: solid;
+  padding: 0.1rem 1.5rem;
+  margin: 1rem 0px;
 }
