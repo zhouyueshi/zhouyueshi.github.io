@@ -117,8 +117,8 @@
 <li><code>│ ├─</code> <strong>obtainFreshBeanFactory</strong>  <span data-vc="" class="badge">② 创建 BeanFactory</span> <span data-vc="" class="badge error">本节主要跟踪的源码流程</span></li>
 <li><code>│ ├─</code> prepareBeanFactory <span data-vc="" class="badge">③ 设置 BeanFactory 的基本属性</span></li>
 <li><code>│ ├─</code> postProcessBeanFactory <span data-vc="" class="badge">④ benFactory的后置处理，可以在subClass中注册一些bean</span> </li>
-<li><code>│ ├─</code> invokeBeanFactoryPostProcessors <span data-vc="" class="badge">⑤ 提前实例化impl BeanFactoryPostProcessor的类，并invoke</span> </li>
-<li><code>│ ├─</code> registerBeanPostProcessors <span data-vc="" class="badge"> ⑥ 实例化impl BeanPostProcessor的类，并注册到beanFacotry</span> </li>
+<li><code>│ ├─</code> invokeBeanFactoryPostProcessors <span data-vc="" class="badge">⑤ 提前实例化impl BFPP的类，并invoke</span> </li>
+<li><code>│ ├─</code> registerBeanPostProcessors <span data-vc="" class="badge"> ⑥ 实例化impl BPP的类，并注册到beanFacotry</span> </li>
 <li><code>│ ├─</code> initMessageSource <span data-vc="" class="badge">⑦ 初始化资源文件，如国际化文件的处理等</span></li>
 <li><code>│ ├─</code> initApplicationEventMulticaster <span data-vc="" class="badge">⑧ 初始化事件管理类</span></li>
 <li><code>│ ├─</code> onRefresh <span data-vc="" class="badge">⑨ 给子类扩展初始化其他Bean，springboot 中用来做内嵌 tomcat 启动</span></li>
@@ -126,6 +126,11 @@
 <li><code>│ ├─</code> finishBeanFactoryInitialization <span data-vc="" class="badge"> ⑪ 完成bean实例化</span></li>
 <li><code>│ └─</code> finishRefresh <span data-vc="" class="badge">⑫ 完成refresh，发布相应事件</span></li>
 </ul>
+<blockquote class="customNote note info">
+    <p><code>⑤ BFPP - BeanFactoryPostProcessor</code></p>
+    <p><code>⑥ BPP - BeanPostProcessor</code></p>
+</blockquote>
+
 <h1 id="├─-testApplicationContext"><a href="#├─-testApplicationContext" class="headerlink" title="├─ testApplicationContext()"></a>├─ testApplicationContext()</h1><blockquote class="customNote note info">
 编写一个测试用例。
 </blockquote>

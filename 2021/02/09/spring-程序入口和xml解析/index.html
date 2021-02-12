@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://tva3.sinaimg.cn/large/e773048fly1gni9eoizcij20lz0e93z4.jpg">
 <meta property="og:image" content="https://tva2.sinaimg.cn/large/e773048fly1gniafea3b3j21fd0ofmz4.jpg">
 <meta property="article:published_time" content="2021-02-09T11:54:12.000Z">
-<meta property="article:modified_time" content="2021-02-12T08:50:42.213Z">
+<meta property="article:modified_time" content="2021-02-12T14:00:38.492Z">
 <meta property="article:author" content="zhouyueshi">
 <meta property="article:tag" content="xml解析">
 <meta name="twitter:card" content="summary">
@@ -224,7 +224,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-12 16:50:42" itemprop="dateModified" datetime="2021-02-12T16:50:42+08:00">2021-02-12</time>
+                <time title="修改时间：2021-02-12 22:00:38" itemprop="dateModified" datetime="2021-02-12T22:00:38+08:00">2021-02-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -320,8 +320,8 @@
 <li><code>│ ├─</code> <strong>obtainFreshBeanFactory</strong>  <span data-vc="" class="badge">② 创建 BeanFactory</span> <span data-vc="" class="badge error">本节主要跟踪的源码流程</span></li>
 <li><code>│ ├─</code> prepareBeanFactory <span data-vc="" class="badge">③ 设置 BeanFactory 的基本属性</span></li>
 <li><code>│ ├─</code> postProcessBeanFactory <span data-vc="" class="badge">④ benFactory的后置处理，可以在subClass中注册一些bean</span> </li>
-<li><code>│ ├─</code> invokeBeanFactoryPostProcessors <span data-vc="" class="badge">⑤ 提前实例化impl BeanFactoryPostProcessor的类，并invoke</span> </li>
-<li><code>│ ├─</code> registerBeanPostProcessors <span data-vc="" class="badge"> ⑥ 实例化impl BeanPostProcessor的类，并注册到beanFacotry</span> </li>
+<li><code>│ ├─</code> invokeBeanFactoryPostProcessors <span data-vc="" class="badge">⑤ 提前实例化impl BFPP的类，并invoke</span> </li>
+<li><code>│ ├─</code> registerBeanPostProcessors <span data-vc="" class="badge"> ⑥ 实例化impl BPP的类，并注册到beanFacotry</span> </li>
 <li><code>│ ├─</code> initMessageSource <span data-vc="" class="badge">⑦ 初始化资源文件，如国际化文件的处理等</span></li>
 <li><code>│ ├─</code> initApplicationEventMulticaster <span data-vc="" class="badge">⑧ 初始化事件管理类</span></li>
 <li><code>│ ├─</code> onRefresh <span data-vc="" class="badge">⑨ 给子类扩展初始化其他Bean，springboot 中用来做内嵌 tomcat 启动</span></li>
@@ -329,6 +329,11 @@
 <li><code>│ ├─</code> finishBeanFactoryInitialization <span data-vc="" class="badge"> ⑪ 完成bean实例化</span></li>
 <li><code>│ └─</code> finishRefresh <span data-vc="" class="badge">⑫ 完成refresh，发布相应事件</span></li>
 </ul>
+<blockquote class="customNote note info">
+    <p><code>⑤ BFPP - BeanFactoryPostProcessor</code></p>
+    <p><code>⑥ BPP - BeanPostProcessor</code></p>
+</blockquote>
+
 <h1 id="├─-testApplicationContext"><a href="#├─-testApplicationContext" class="headerlink" title="├─ testApplicationContext()"></a>├─ testApplicationContext()</h1><blockquote class="customNote note info">
 编写一个测试用例。
 </blockquote>
@@ -762,7 +767,7 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="/zhouys68@163.com" title="E-Mail → zhouys68@163.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+        <a href="mailto:zhouys68@163.com" title="E-Mail → mailto:zhouys68@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
   </div>
 
