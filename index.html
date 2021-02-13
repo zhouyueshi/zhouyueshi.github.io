@@ -22,12 +22,10 @@
     var CONFIG = {"hostname":"zhouyueshi.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="让学习成为一种享受">
-<meta property="og:type" content="website">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="zhouyueshi&#39;s Notes">
 <meta property="og:url" content="https://zhouyueshi.github.io/index.html">
 <meta property="og:site_name" content="zhouyueshi&#39;s Notes">
-<meta property="og:description" content="让学习成为一种享受">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="zhouyueshi">
 <meta name="twitter:card" content="summary">
@@ -184,12 +182,107 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zhouyueshi.github.io/2021/02/12/spring%E5%90%8E%E7%BD%AE%E5%A4%84%E7%90%86%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/two.jpg">
+      <meta itemprop="name" content="zhouyueshi">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zhouyueshi's Notes">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/02/12/spring%E5%90%8E%E7%BD%AE%E5%A4%84%E7%90%86%E5%99%A8/" class="post-title-link" itemprop="url">spring后置处理器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-02-12 22:36:46" itemprop="dateCreated datePublished" datetime="2021-02-12T22:36:46+08:00">2021-02-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-13 23:37:21" itemprop="dateModified" datetime="2021-02-13T23:37:21+08:00">2021-02-13</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/spring%E6%BA%90%E7%A0%81%E7%B3%BB%E5%88%97/" itemprop="url" rel="index"><span itemprop="name">spring源码系列</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>14k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>13 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本章主要分析beanFactory的后置处理器，以及bean的后置处置器。即：<code>BeanFactoryPostProcessor</code>和<code>BeanPostProcessor</code>。关于<code>BeanPostProcessor</code>，本节主要讲注册，具体调用，会在bean的实例化之后写到。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/12/spring%E5%90%8E%E7%BD%AE%E5%A4%84%E7%90%86%E5%99%A8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://zhouyueshi.github.io/2021/02/09/spring-%E7%A8%8B%E5%BA%8F%E5%85%A5%E5%8F%A3%E5%92%8Cxml%E8%A7%A3%E6%9E%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/two.jpg">
       <meta itemprop="name" content="zhouyueshi">
-      <meta itemprop="description" content="让学习成为一种享受">
+      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -215,7 +308,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-12 16:50:42" itemprop="dateModified" datetime="2021-02-12T16:50:42+08:00">2021-02-12</time>
+                <time title="修改时间：2021-02-13 21:55:54" itemprop="dateModified" datetime="2021-02-13T21:55:54+08:00">2021-02-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -284,7 +377,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/two.jpg">
       <meta itemprop="name" content="zhouyueshi">
-      <meta itemprop="description" content="让学习成为一种享受">
+      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -302,10 +395,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-02-09 11:17:10 / 修改时间：21:52:00" itemprop="dateCreated datePublished" datetime="2021-02-09T11:17:10+08:00">2021-02-09</time>
+              <time title="创建时间：2021-02-09 11:17:10" itemprop="dateCreated datePublished" datetime="2021-02-09T11:17:10+08:00">2021-02-09</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-13 21:42:27" itemprop="dateModified" datetime="2021-02-13T21:42:27+08:00">2021-02-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -322,7 +421,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>976</span>
+              <span>977</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -341,7 +440,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>为了有助于spring源码的学习，方便在源码中断点、写注释、我们需要自己将源码编译好。</p>
+          <p>​    为了有助于spring源码的学习，方便在源码中断点、写注释、我们需要自己将源码编译好。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/02/09/spring%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/#more" rel="contents">
@@ -425,14 +524,14 @@
     <img class="site-author-image" itemprop="image" alt="zhouyueshi"
       src="/images/two.jpg">
   <p class="site-author-name" itemprop="name">zhouyueshi</p>
-  <div class="site-description" itemprop="description">让学习成为一种享受</div>
+  <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -445,14 +544,14 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="/zhouys68@163.com" title="E-Mail → zhouys68@163.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+        <a href="mailto:zhouys68@163.com" title="E-Mail → mailto:zhouys68@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
   </div>
 
@@ -491,13 +590,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">30k</span>
+    <span title="站点总字数">44k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">27 分钟</span>
+    <span title="站点阅读时长">40 分钟</span>
 </div>
 
 <!--
